@@ -1,0 +1,334 @@
+/* 기본 스타일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 메뉴바 스타일 */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.hamburger {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: -250px; /* 사이드바가 처음에 화면 밖에 있도록 설정 */
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10px; /* 오른쪽에서 10px 떨어지도록 설정 */
+    font-size: 36px;
+    color: white;
+}
+
+
+
+/* Swiper 슬라이더 관련 스타일 */
+.swiper-container {
+    width: 100%;
+    height: 100vh;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: rgb(182, 34, 34);
+}
+
+.swiper-pagination {
+    bottom: 20px;
+}
+
+/* 각 섹션 스타일 */
+.section {
+    text-align: center;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 두 번째, 세 번째, 네 번째 섹션 배경색 및 텍스트 색상 */
+.section:nth-child(2) {
+    background-color: #e74c3c;
+    color: rgb(66, 148, 168);
+}
+
+.section:nth-child(3) {
+    background-color: #2ecc71;
+    color: rgb(196, 57, 165);
+}
+
+.section:nth-child(4) {
+    background-color: #3498db;
+    color: rgb(188, 243, 38);
+}
+
+/* 게임 리스트 섹션 스타일 */
+#game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #1b2838;
+    padding: 20px;
+    width: 80%; /* 적절한 너비로 조정 */
+    margin: 0 auto;
+    border-radius: 10px;
+    color: white;
+    height: 100%; /* fullpage.js에 맞게 100% 높이로 설정 */
+    overflow-y: auto; /* 스크롤 가능한 경우 스크롤 표시 */
+}
+
+/* 개별 게임 항목 스타일 */
+.game-item {
+    display: flex;
+    align-items: center;
+    background-color: #2a475e;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.game-item:hover {
+    background-color: #3b5998;
+}
+
+/* 게임 이미지 크기 조정 */
+.game-image {
+    width: 80px; /* 이미지 크기 조정 */
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+/* 게임 정보 폰트 크기 조정 */
+.game-info {
+    flex-grow: 1;
+}
+
+.game-info h2 {
+    margin: 0;
+    font-size: 1.2em; /* 제목 크기 조정 */
+}
+
+.game-info p {
+    margin: 5px 0 0;
+    font-size: 0.85em; /* 설명 텍스트 크기 조정 */
+    color: #c6d4df;
+}
+
+/* 가격 정보 스타일 */
+.game-price {
+    text-align: right;
+}
+
+.game-price .discount {
+    display: block;
+    font-size: 1em; /* 할인율 크기 조정 */
+    color: #e74c3c;
+    margin-bottom: 5px;
+}
+
+.game-price .price {
+    font-size: 1.2em; /* 가격 크기 조정 */
+    color: #fff;
+}
+
+
+
+.game-item {
+    display: flex;
+    align-items: center;
+    background-color: #2a475e;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.game-item:hover {
+    background-color: #3b5998;
+}
+
+.game-image {
+    width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.game-info {
+    flex-grow: 1;
+}
+
+.game-info h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.game-info p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #c6d4df;
+}
+
+.game-price {
+    text-align: right;
+}
+
+.game-price .discount {
+    display: block;
+    font-size: 1.2em;
+    color: #e74c3c;
+    margin-bottom: 5px;
+}
+
+.game-price .price {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1b2838;
+    color: white;
+}
+
+.game-section {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    background-color: #1b2838;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.game-list {
+    width: 30%;
+    background-color: #2a475e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.game-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #2a475e;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-item:hover {
+    background-color: #3b5998;
+}
+
+.game-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.game-item .discount {
+    color: #e74c3c;
+    font-size: 1em;
+}
+
+.game-item .price {
+    color: #fff;
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+.game-details {
+    width: 65%;
+    background-color: #2a475e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.game-details h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.game-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
