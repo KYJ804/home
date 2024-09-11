@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 페이지</title>
+    
+    <!-- CSS 파일 링크 -->
+    <link rel="stylesheet" href="../css/discount_style.css">
+    <script>
+        function loadHTML(file)
+        {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function ()
+            {
+                if(rawFile.readyState === 4)
+                {
+                    if(rawFile.status === 200 || rawFile.status == 0)
+                    {
+                        var allText = rawFile.responseText;
+                        document.write(allText);
+                    }
+                }
+            }
+            rawFile.send(null);
+        }
+    </script>
+</head>
+<body>
+
+    <!-- 메뉴바 -->
+    <header>
+        <script>loadHTML("./header.html")</script>
+    </header>
+
+    <!-- 게임 리스트 컨테이너 -->
+    <section class="game-container">
+        <!-- 게임 카드 -->
+        <div class="game-card">
+            <img src="../assets/images/A_DANCE_OF.jpg" alt="FARCRY6">
+            <div class="game-info">
+                <h3>FARCRY6</h3>
+                <span class="discount">30%</span>
+                <div>
+                    <span class="price">₩65,000</span>
+                    <span class="discount-price">₩45,000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://via.placeholder.com/200x250?text=TEKKEN7" alt="TEKKEN7">
+            <div class="game-info">
+                <h3>TEKKEN7</h3>
+                <span class="discount">31%</span>
+                <div>
+                    <span class="price">₩43,800</span>
+                    <span class="discount-price">₩30,000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://via.placeholder.com/200x250?text=Borderlands2" alt="Borderlands2">
+            <div class="game-info">
+                <h3>Borderlands2</h3>
+                <span class="discount">50%</span>
+                <div>
+                    <span class="price">₩21,000</span>
+                    <span class="discount-price">₩10,500</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://via.placeholder.com/200x250?text=NBA2K22" alt="NBA2K22">
+            <div class="game-info">
+                <h3>NBA 2K22</h3>
+                <span class="discount">15%</span>
+                <div>
+                    <span class="price">₩65,000</span>
+                    <span class="discount-price">₩55,000</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <img src="https://via.placeholder.com/200x250?text=FIFA22" alt="FIFA22">
+            <div class="game-info">
+                <h3>FIFA22</h3>
+                <span class="discount">15%</span>
+                <div>
+                    <span class="price">₩65,000</span>
+                    <span class="discount-price">₩56,000</span>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+</body>
+</html>
