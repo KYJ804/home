@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            background-color: #66c0f4;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav a.active {
+            background-color: #ff4a4a;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        /* 기본 스타일 */
+        .table-container {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .table-container th, .table-container td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .table-container th {
+            background-color: #66c0f4;
+            color: white;
+        }
+
+        .table-container tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .table-container tr:hover {
+            background-color: #ddd;
+        }
+
+        /* 버튼 스타일 */
+        .btn {
+            background-color: #ff4a4a;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #ff2a2a;
+        }
+
+        /* 상태 전환 버튼 */
+        .status-select {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>관리자 페이지</h1>
+
+    <!-- 네비게이션 -->
+    <nav>
+        <a href="#" id="inquiry-tab" class="active">문의사항 관리</a>
+        <a href="#" id="community-tab">커뮤니티 관리</a>
+        <a href="#" id="member-tab">회원 관리</a>
+    </nav>
+
+    <!-- 문의사항 관리 섹션 -->
+    <section id="inquiry-section" class="active">
+        <h2>문의사항 관리</h2>
+        <table class="table-container" id="inquiry-table">
+            <thead>
+                <tr>
+                    <th>문의 제목</th>
+                    <th>문의 내용</th>
+                    <th>작성 날짜</th>
+                    <th>상태</th>
+                    <th>상세보기</th>
+                    <th>상태 변경</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>비밀번호 변경 요청</td>
+                    <td>비밀번호를 변경하고 싶습니다. 절차가 궁금합니다.</td>
+                    <td>2024-09-01</td>
+                    <td class="status">접수 완료</td>
+                    <td><a href="./inquiry3.html" class="btn">상세보기</a></td>
+
+                    <td>
+                        <select class="status-select" onchange="updateStatus(this)">
+                            <option value="접수 완료">접수 완료</option>
+                            <option value="처리 중">처리 중</option>
+                            <option value="처리 완료">처리 완료</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>계정 삭제 요청</td>
+                    <td>내 계정을 삭제하고 싶습니다. 어떻게 해야 하나요?</td>
+                    <td>2024-08-29</td>
+                    <td class="status">처리 중</td>
+                    <td><a href="#" class="btn">상세보기</a></td>
+                    <td>
+                        <select class="status-select" onchange="updateStatus(this)">
+                            <option value="접수 완료">접수 완료</option>
+                            <option value="처리 중">처리 중</option>
+                            <option value="처리 완료">처리 완료</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 커뮤니티 관리 섹션 -->
+    <section id="community-section">
+        <h2>커뮤니티 관리</h2>
+        <table class="table-container">
+            <thead>
+                <tr>
+                    <th>게시물 제목</th>
+                    <th>작성자</th>
+                    <th>작성 날짜</th>
+                    <th>상태</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>커뮤니티 규칙 변경안</td>
+                    <td>유저A</td>
+                    <td>2024-09-01</td>
+                    <td>게시 중</td>
+                    <td><a href="#" class="btn">삭제</a></td>
+                </tr>
+                <tr>
+                    <td>게임 관련 질문</td>
+                    <td>유저B</td>
+                    <td>2024-08-29</td>
+                    <td>게시 중</td>
+                    <td><a href="#" class="btn">삭제</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 회원 관리 섹션 -->
+    <section id="member-section">
+        <h2>회원 관리</h2>
+        <table class="table-container">
+            <thead>
+                <tr>
+                    <th>회원 이름</th>
+                    <th>이메일</th>
+                    <th>가입 날짜</th>
+                    <th>상태</th>
+                    <th>차단</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>유저C</td>
+                    <td>userc@example.com</td>
+                    <td>2024-09-01</td>
+                    <td>활성화</td>
+                    <td><a href="#" class="btn">차단</a></td>
+                </tr>
+                <tr>
+                    <td>유저D</td>
+                    <td>userd@example.com</td>
+                    <td>2024-08-29</td>
+                    <td>활성화</td>
+                    <td><a href="#" class="btn">차단</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script>
+        // 탭 메뉴 선택 시 섹션 전환
+        const inquiryTab = document.getElementById('inquiry-tab');
+        const communityTab = document.getElementById('community-tab');
+        const memberTab = document.getElementById('member-tab');
+
+        const inquirySection = document.getElementById('inquiry-section');
+        const communitySection = document.getElementById('community-section');
+        const memberSection = document.getElementById('member-section');
+
+        inquiryTab.addEventListener('click', function() {
+            setActiveTab(inquiryTab, [communityTab, memberTab]);
+            setActiveSection(inquirySection, [communitySection, memberSection]);
+        });
+
+        communityTab.addEventListener('click', function() {
+            setActiveTab(communityTab, [inquiryTab, memberTab]);
+            setActiveSection(communitySection, [inquirySection, memberSection]);
+        });
+
+        memberTab.addEventListener('click', function() {
+            setActiveTab(memberTab, [inquiryTab, communityTab]);
+            setActiveSection(memberSection, [inquirySection, communitySection]);
+        });
+
+        // 탭 활성화 함수
+        function setActiveTab(activeTab, inactiveTabs) {
+            activeTab.classList.add('active');
+            inactiveTabs.forEach(tab => tab.classList.remove('active'));
+        }
+
+        // 섹션 활성화 함수
+        function setActiveSection(activeSection, inactiveSections) {
+            activeSection.classList.add('active');
+            inactiveSections.forEach(section => section.classList.remove('active'));
+        }
+
+        // 상태 전환 함수
+        function updateStatus(selectElement) {
+            const statusCell = selectElement.closest('tr').querySelector('.status');
+            statusCell.textContent = selectElement.value;
+        }
+    </script>
+
+</body>
+</html>

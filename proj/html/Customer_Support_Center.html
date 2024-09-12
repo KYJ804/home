@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객센터</title>
+    <link rel="stylesheet" href="../css/Customer_Support_Center.CSS">
+</head>
+<body>
+    <!-- 상단 배너와 검색창 -->
+    <header class="header-banner">
+        <div class="search-bar-container">
+            <h1>무엇을 도와드릴까요?</h1>
+            <input type="text" class="search-input" placeholder="검색어를 입력하세요...">
+        </div>
+    </header>
+
+    <!-- 아이콘 메뉴 -->
+    <section class="main-icons">
+        <div class="icon-item">
+            <img src="../assets/images/payment.png" alt="결제 및 RP 문제">
+            <p class="question">결제 및 RP 문제</p>
+            <div class="answer">
+                <p>RP 충전 문제나 결제 관련 문제는 고객센터에 문의하거나 해당 결제 수단을 다시 확인해 주세요.</p>
+            </div>
+        </div>
+        <div class="icon-item">
+            <img src="system.png" alt="시스템 문제 해결">
+            <p class="question">시스템 문제 해결하기</p>
+            <div class="answer">
+                <p>게임이 제대로 실행되지 않을 경우, 시스템 요구사항을 확인하고 드라이버를 업데이트하세요.</p>
+            </div>
+        </div>
+        <div class="icon-item">
+            <img src="account.png" alt="계정 및 보안">
+            <p class="question">계정 및 보안</p>
+            <div class="answer">
+                <p>계정 도용이 의심되거나 비밀번호를 잊으셨다면 보안 설정에서 비밀번호를 변경하고 고객센터에 문의하세요.</p>
+            </div>
+        </div>
+        <div class="icon-item">
+            <img src="gameplay.png" alt="게임 종료 후 플레이어 신고">
+            <p class="question">게임 종료 후 플레이어 신고하기</p>
+            <div class="answer">
+                <p>게임 종료 후 플레이어를 신고하려면 리플레이를 확인하고 신고 기능을 통해 문제를 보고하세요.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="qa">
+        <h2>많이 하는 질문 TOP4</h2>
+        <div class="qa-item">
+            <p class="question">Q1. 비밀번호는 어떻게 변경하나요?</p>
+            <div class="answer">
+                <p>A1. 비밀번호를 변경하려면 설정 페이지에서 "비밀번호 변경" 옵션을 선택하고, 현재 비밀번호와 새로운 비밀번호를 입력하세요.</p>
+            </div>
+        </div>
+        <div class="qa-item">
+            <p class="question">Q2. 계정을 삭제하고 싶습니다.</p>
+            <div class="answer">
+                <p>A2. 계정 삭제는 고객센터를 통해 요청해야 하며, 모든 데이터가 복구 불가능하게 삭제됩니다.</p>
+            </div>
+        </div>
+        <div class="qa-item">
+            <p class="question">Q3. 서비스 이용 요금은 얼마인가요?</p>
+            <div class="answer">
+                <p>A3. 서비스는 기본적으로 무료로 제공되지만, 특정 프리미엄 기능이나 추가적인 옵션은 유료로 제공됩니다.</p>
+            </div>
+        </div>
+        <div class="qa-item">
+            <p class="question">Q4. 이용 제한 사유는 무엇인가요?</p>
+            <div class="answer">
+                <p>A4. 이용 제한은 계정 도용, 불법적인 활동, 이용 약관 위반 시 발생할 수 있습니다. 자세한 내용은 고객센터로 문의하세요.</p>
+            </div>
+        </div>
+    </section>
+    <!-- 세부 카테고리 -->
+    <section class="help-categories">
+        <h2>도움이 필요한 유형을 선택해주세요.</h2>
+        <div class="category-grid">
+            <div class="category-item">리그 오브 레전드 기본</div>
+            <div class="category-item">계정 정보 및 보안</div>
+            <div class="category-item">게임, 명예, 점수 및 랭킹</div>
+            <div class="category-item">성능, 하드웨어 문제, 버그</div>
+            <div class="category-item">로그인, 패치, 연결 및 충돌</div>
+            <div class="category-item">상점, 신용카드 및 구독</div>
+            <div class="category-item">신고, 제재 및 이용 제한</div>
+            <div class="category-item">이벤트, 상품 및 기타</div>
+        </div>
+    </section>
+
+    <!-- 문의하기 -->
+    <!-- 문의하기 버튼 섹션 추가 -->
+    <section class="inquiry-section">
+        <h2>원하는 내용을 찾을 수 없으셨나요?</h2>
+        <p>어떠한 내용이라도 답변드릴 준비가 되어 있습니다! 문의를 보내주세요! 가능한 한 빨리 답변 드리도록 하겠습니다.</p>
+        <a href="./inquiry.html" class="inquiry-btn">문의하기</a> <!-- <a> 태그 사용 -->
+    </section>
+
+    
+
+    <script>
+        // 모든 질문을 선택
+        const questions = document.querySelectorAll('.question');
+
+        // 각 질문에 클릭 이벤트를 추가
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                // 클릭한 질문에 해당하는 답변을 토글 (보이거나 숨김)
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+
+    </script>
+
+</body>
+</html>
